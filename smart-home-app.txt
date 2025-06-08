@@ -1,0 +1,42 @@
+# Структура проекта Smart Home
+
+```
+smart-home-app/
+├── backend/
+│   ├── package.json
+│   ├── server.js
+│   ├── db.js
+│   └── routes/
+│       ├── auth.js
+│       ├── places.js
+│       ├── devices.js
+│       ├── events.js
+│       └── scripts.js
+├── frontend/
+│   ├── package.json
+│   ├── src/
+│   │   ├── App.js
+│   │   ├── index.js
+│   │   ├── api/
+│   │   │   └── api.js
+│   │   ├── components/
+│   │   │   ├── Auth/
+│   │   │   │   ├── Login.js
+│   │   │   │   └── Register.js
+│   │   │   ├── Places/
+│   │   │   │   ├── PlaceList.js
+│   │   │   │   └── AddPlace.js
+│   │   │   ├── Devices/
+│   │   │   │   ├── DeviceGroups.js
+│   │   │   │   ├── DeviceInstances.js
+│   │   │   │   └── AddDevice.js
+│   │   │   ├── Events/
+│   │   │   │   └── EventList.js
+│   │   │   └── Scripts/
+│   │   │       ├── ScriptList.js
+│   │   │       └── AddScript.js
+│   │   └── context/
+│   │       └── AuthContext.js
+├── docker-compose.yml
+└── README.md
+```
