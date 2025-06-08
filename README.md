@@ -57,43 +57,7 @@ mkdir smart-home-app
 cd smart-home-app
 ```
 
-### 2. Создайте все необходимые директории
-
-```bash
-mkdir -p backend/routes frontend/src/{components/{Auth,Places,Devices,Events,Scripts},api,context} db/init
-```
-
-### 3. Скопируйте все файлы из артефактов в соответствующие директории
-
-Структура должна выглядеть так:
-- SQL файлы (01-init.sql, 02-insert.sql) → `db/init/`
-- Backend файлы → `backend/`
-- Frontend файлы → `frontend/`
-- docker-compose.yml → корневая директория
-
-### 4. Создайте файл frontend/public/index.html
-
-```bash
-mkdir frontend/public
-cat > frontend/public/index.html << 'EOF'
-<!DOCTYPE html>
-<html lang="ru">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta name="description" content="Smart Home Management System" />
-    <title>Smart Home</title>
-  </head>
-  <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-  </body>
-</html>
-EOF
-```
-
-### 5. Запустите приложение с помощью Docker Compose
+### 2. Запустите приложение с помощью Docker Compose
 
 ```bash
 docker-compose up -d
@@ -104,7 +68,7 @@ Docker Compose выполнит следующее:
 - Запустит backend сервер на порту 5000
 - Запустит frontend приложение на порту 3000
 
-### 6. Дождитесь запуска всех сервисов
+### 3. Дождитесь запуска всех сервисов
 
 Проверьте статус контейнеров:
 
@@ -114,7 +78,7 @@ docker-compose ps
 
 Все три контейнера должны быть в статусе "Up".
 
-### 7. Откройте приложение
+### 4. Откройте приложение
 
 Откройте браузер и перейдите по адресу: http://localhost:3000
 
@@ -201,10 +165,3 @@ docker-compose up -d postgres
 
 ### Frontend:
 - `REACT_APP_API_URL` - URL API сервера
-
-## Примечания
-
-- В production обязательно измените JWT_SECRET на безопасный случайный ключ
-- Используйте HTTPS в production
-- Настройте правильные CORS политики
-- Рассмотрите использование переменных окружения для чувствительных данных
